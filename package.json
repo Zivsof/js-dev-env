@@ -1,0 +1,51 @@
+{
+  "name": "pluralsight-js-dev-env",
+  "version": "1.0.0",
+  "description": "JavaScript Development Environment from Pluralsight Course with Cory House",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zivsof/pluralsight-js-dev-env.git"
+  },
+  "author": "Ziv Sofrin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zivsof/pluralsight-js-dev-env/issues"
+  },
+  "homepage": "https://github.com/Zivsof/pluralsight-js-dev-env#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "chalk": "^4.0.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-watch": "^6.0.1",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^4.0.4",
+    "jsdom": "^16.2.2",
+    "localtunnel": "^2.0.0",
+    "mocha": "^7.1.1",
+    "nock": "^12.0.3",
+    "npm-run-all": "^4.1.5",
+    "nsp": "^3.2.1",
+    "numeral": "^2.0.6",
+    "open": "^7.0.3",
+    "rimraf": "^3.0.2",
+    "webpack": "^4.42.1",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-md5-hash": "0.0.6"
+  }
+}
