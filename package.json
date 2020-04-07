@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "prestart": "ts-node buildScripts/typescript/startMessage.ts",
+    "prestart": "babel-node buildScripts/javascript/startMessage.js",
     "start": "npm-run-all --parallel open:src",
-    "open:src": "ts-node buildScripts/typescript/srcServerTS.ts",
+    "open:src": "babel-node buildScripts/javascript/srcServer.js",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel"
   },
@@ -21,7 +21,9 @@
     "url": "https://github.com/Zivsof/pluralsight-js-dev-env/issues"
   },
   "homepage": "https://github.com/Zivsof/pluralsight-js-dev-env#readme",
-  "dependencies": {},
+  "dependencies": {
+    "ts-node-dev": "^1.0.0-pre.44"
+  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
@@ -42,6 +44,7 @@
     "jsdom": "^16.2.2",
     "mocha": "^7.1.1",
     "nock": "^12.0.3",
+    "nodemon": "^2.0.2",
     "npm-run-all": "^4.1.5",
     "nsp": "^3.2.1",
     "numeral": "^2.0.6",
