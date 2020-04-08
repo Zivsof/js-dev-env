@@ -1,12 +1,13 @@
+import webpack from 'webpack';
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-  // enable debuging information as we run our build
-  debug: true,
+  mode: 'development',
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.json']
+  },
   devtool: 'inline-source-map',
-  // mean that webpack will display a list of all the files that it's bundling
-  //noInfo: false,
-  // define our app's entry point as src/index
   entry: [
     path.resolve(__dirname, 'src/index')
   ],
@@ -18,15 +19,20 @@ export default {
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
-      debug: true
+      minimize: false,
+      debug: true,
+      noInfo: true // set to false to see a list of every file being bundled.
+    }),
+    // Create HTML file that includes reference to bundled JS.
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      inject: true
     })
   ],
-  // need to tell webpack the file types that we want it to handle.
   module: {
-    //loaders teach webpack how to handle different file types.
-    loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loaders: ['babel'] },
-      { test: /\.css$/, loaders: ['style', 'css'] }
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
     ]
   }
 }
