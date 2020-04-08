@@ -1,18 +1,18 @@
-var express = require("express");
-var path = require("path");
-var openTS = require("open");
+import express from "express";
+import { join } from "path";
+import open from "open";
 
 var port = 3000;
 var app = express();
 
-app.get("/", function (req: any, res: any) {
-  res.sendFile(path.join(__dirname, "../../src/index.html"));
+app.get("/", function (req, res) {
+  res.sendFile(join(__dirname, "/../../src/index.html"));
 });
 
-app.listen(port, function (err: any) {
+app.listen(port, function (err) {
   if (err) {
     console.log(err);
   } else {
-    openTS("http://localhost:" + port);
+    open("http://localhost:" + port);
   }
 });
