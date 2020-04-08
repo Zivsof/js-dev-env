@@ -16,7 +16,11 @@ export default {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  plugins: [],
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      debug: true
+    })
+  ],
   // need to tell webpack the file types that we want it to handle.
   module: {
     //loaders teach webpack how to handle different file types.
